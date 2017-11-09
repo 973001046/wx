@@ -1,0 +1,14 @@
+var filter = function(id,way){
+  console.log(way)
+  if (!way){
+    if(id == 1 ){
+      return '请输入企业名称'
+    } else{
+      return '请输入岗位名称'
+    }
+  }
+}
+
+module.exports = {
+  filter: filter
+}

@@ -1,0 +1,19 @@
+/* pages/personal/self/self.wxss */
+@import "../../../style/information.wxss";
+.itemList .item{
+  padding-right: 30rpx;
+  padding-bottom: 60rpx;
+}
+.itemList .item .num{
+  position: absolute;
+  right: 30rpx;
+  border-bottom: 20rpx;
+  font-size: 26rpx;
+  color: #969696;
+}
+.itemList .item .section textarea{
+  color: #969696;
+  font-size: 30rpx;
+  padding-top: 15rpx;
+  width: 690rpx;
+}

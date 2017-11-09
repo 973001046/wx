@@ -1,0 +1,6 @@
+/* pages/personal/educate/educate.wxss */
+@import "../../../style/information.wxss";
+.itemList .text{
+  width: 300rpx;
+  text-align: right;
+}

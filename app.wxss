@@ -1,0 +1,13 @@
+/**app.wxss**/
+.container {
+  padding: 0;
+  margin: 0;
+  font-famliy:Arial, Helvetica, sans-serif; 
+} 
+.clearfix:after{
+  content: '';
+  display: block;
+  height: 0;
+  clear: both;
+  overflow: hidden;
+}

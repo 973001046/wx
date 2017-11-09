@@ -1,0 +1,105 @@
+/* pages/collect/collect.wxss */
+.index-list .each{
+  margin: 0 28rpx;
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #eee;
+  position: relative;
+}
+.index-list .each .left{
+  width: 136rpx;
+  height: 136rpx;
+  border: 1rpx solid #f6f6f6; 
+  border-radius: 10rpx;
+  overflow: hidden;
+  float: left;
+}
+.index-list .each .right{
+  float: left;
+  margin-left: 20rpx;
+}
+.index-list .each .right text{
+  display: block;
+}
+.index-list .each .right .title{
+  color: #323232;
+  font-size: 30rpx;
+  font-weight: bold;
+  line-height: 48rpx;
+  margin-top: 6rpx;
+  width: 410rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+.index-list .each .right .name{
+  color: #646464;
+  font-size: 28rpx;
+  line-height: 42rpx;
+  width: 430rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+.index-list .each .right .tip{
+  color: #969696;
+  font-size: 26rpx;
+  line-height: 42rpx;
+}
+.index-list .each .city{
+  position: absolute;
+  right: 0;
+  color: #969696;
+  font-size: 26rpx;
+  line-height: 48rpx;
+  margin-top: 6rpx;
+}
+.loading{
+  width: 250rpx;
+  line-height: 60rpx;
+  /* background: url('../../images/loading.gif') no-repeat left center; */
+  background-size: 35rpx;
+  font-size: 30rpx;
+  padding-left: 55rpx;
+  color: #666;
+  margin: 20rpx auto;
+  position: relative;
+}
+.loading image{
+  position: absolute;
+  width: 35rpx;
+  height: 35rpx;
+  left: 0;
+  top: 13rpx;
+}
+.noMore{
+    width: 250rpx;
+    line-height: 60rpx;
+    text-align: center;
+    background-size: 35rpx;
+    font-size: 30rpx;
+    color: #666;
+    margin: 0 auto;
+    padding: 20rpx 0;
+}
+.index-list{
+  position: relative;
+}
+.index-list .del{
+  width: 120rpx;
+  height: 198rpx;
+  background-color: #eb1f1f;
+  color: #fff;
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 198rpx;
+  position: absolute;
+  right: -150rpx;
+  top: 0;
+}
+.collect navigator{
+  width: 680rpx;
+}
+.collect .index-list .each {
+  width: 690rpx;
+  overflow: auto;
+}

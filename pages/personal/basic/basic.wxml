@@ -1,0 +1,103 @@
+<!--pages/personal/basic/basic.wxml-->
+<wxs src="basic.wxs" module="basicFuc" />
+<view class='container'>
+    <view class='itemList'>
+        <view class='item clearfix'>
+            <view class='left'>姓名</view>
+            <view class='text'>
+                <input  bindinput="bindKeyInput" value="{{name}}" data-type='name' placeholder="{{name}}"/>
+            </view>
+        </view>
+
+        <view class='item clearfix'>
+            <view class='left'>性别</view>
+            <view class='text' bindtap='sex'>{{basicFuc.sexFunc(gender)}}</view>
+            <image src='/images/Combined Shape.png'></image>
+        </view>
+
+        <view class='item clearfix'>
+            <view class='left'>出生日期</view>
+
+            <view class="text">
+                <picker mode="date" value="{{birth_date}}" star="1900-12-12" bindchange="bindDateChange">
+                    <view class="picker">
+                        {{birth_date}}
+                    </view>
+                </picker>
+            </view>
+
+            <image src='/images/Combined Shape.png'></image>
+        </view>
+
+        <view class='item clearfix'>
+            <view class='left'>所在城市</view>
+            <navigator url="/pages/adress/adress?way=basic">
+                <view class='text' data-id="{{region_id}}">{{region_name}}</view>
+            </navigator>
+            <image src='/images/Combined Shape.png'></image>
+        </view>
+
+        <view class='item clearfix'>
+            <view class='left'>政治面貌</view>
+            <view class='text' bindtap='politicsFunc'>{{basicFuc.politics(politics_status)}}</view>
+            <image src='/images/Combined Shape.png'></image>
+        </view>
+    </view>
+
+    <view class='itemList'>
+        <view class='item clearfix'>
+            <view class='left'>联系电话</view>
+            <view class='text'>
+                <input data-type='tel' bindblur="check" value='{{value_contact_mobile}}' bindinput="bindKeyInput" placeholder="{{contact_mobile}}"/>
+            </view>
+        </view>
+
+        <view class='item clearfix'>
+            <view class='left'>联系邮箱</view>
+            <view class='text'>
+                <input data-type='email' bindblur="check" value='{{value_contact_email}}' bindinput="bindKeyInput" placeholder="{{contact_email}}"/>
+            </view>
+        </view>
+    </view>
+
+    <view class='itemList'>
+        <view class='item clearfix'>
+            <view class='left'>就读学校</view>
+            <view class='text'>
+                <input  bindinput="bindKeyInput" value='{{graduate_school}}' data-type='school' placeholder="{{graduate_school}}"/>
+            </view>
+        </view>
+
+        <view class='item clearfix'>
+            <view class='left'>专业名称</view>
+            <view class='text'>
+                <input  bindinput="bindKeyInput" value='{{detail_major}}' data-type='major' placeholder="{{detail_major}}"/>
+            </view>
+        </view>
+
+        <view class='item clearfix'>
+            <view class='left'>最高学历</view>
+            <view class='text' bindtap='eduFunc'>{{basicFuc.edu(education)}}</view>
+            <image src='/images/Combined Shape.png'></image>
+        </view>
+
+        <view class='item clearfix'>
+            <view class='left'>毕业年分</view>
+
+            <view class="text">
+                <picker mode="date" fields='year' value="{{graduate_year}}" start="2000" end="2020" bindchange="bindYearChange">
+                    <view class="picker">
+                        {{graduate_year}}
+                    </view>
+                </picker>
+            </view>
+
+            <image src='/images/Combined Shape.png'></image>
+        </view>
+    </view>
+
+    <view class='btn'>
+        <button type="primary" disabled="{{disabled}}" bindtap="submit">保存</button>
+    </view>
+    
+</view>

@@ -1,0 +1,20 @@
+<!--pages/personal/actList/actList.wxml-->
+<view class='container'>
+    <view class='itemList'>
+        <view class='item' wx:for="{{list}}">
+            <view class='top'>
+                <text>{{item.period}}</text>
+                <!-- <text>上海</text> -->
+                <navigator url="/pages/personal/activities/activities?id={{item.pkid}}&index={{index}}">
+                   <image src='../../resume/image/edit.png'></image>
+                </navigator>
+            </view>
+
+            <view class='bottom' style='padding-top: 0'>{{item.description}}</view>
+        </view>
+    </view>
+
+    <navigator url="/pages/personal/activities/activities">
+       <button type="primary"> 添加课外活动 </button>
+    </navigator>
+</view>

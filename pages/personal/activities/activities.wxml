@@ -1,0 +1,39 @@
+<!--pages/personal/activities/activities.wxml-->
+<view class='container'>
+    <view class='itemList'>
+        <view class='item clearfix'>
+            <view class='left'>时间</view>
+            <view class='text'>
+                <picker mode="date" data-type="start" value="{{period}}" star="1980-12-12" bindchange="bindDateChange">
+                    <view class="picker">
+                        {{period}}
+                    </view>
+                </picker>
+            </view>
+            <image src='/images/Combined Shape.png'></image>
+        </view>
+
+        <view class='item special clearfix'>
+            <view class='clearfix'>
+              <view class='left'>活动名称</view>
+              <view class='text'>{{textNum}} / 300</view>
+            </view>
+
+            <view class="section">
+                <textarea maxlength='300' value='{{description}}' bindinput='bindKeyInput' data-type='content' placeholder="请填入具体的活动内容。例如：世博会志愿者"/>
+            </view>
+
+        </view>
+        
+    </view> 
+
+
+    <view class='btn'>
+        <button type="primary" bindtap="submit">保存</button>
+    </view>
+
+    <view class='btn'>
+        <view>删除</view>
+    </view>
+    
+</view>

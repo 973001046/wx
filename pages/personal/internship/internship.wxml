@@ -1,0 +1,65 @@
+<!--pages/personal/internship/internship.wxml-->
+ <wxs src="filter.wxs" module="logic" /> 
+<view class='container'>
+    <view class='itemList'>
+         <view class='item clearfix'>
+            <view class='left'>职位类别</view>
+            <view class='text' bindtap='classsfy'>{{logic.filter(expect_category)}}</view>
+            <image src='/images/Combined Shape.png'></image>
+        </view>
+
+         <view class='item clearfix'>
+            <view class='left'>期望城市</view>
+
+            <navigator url="../adress/adress" hover-class="navigator-hover">
+                 <view class='text'>{{logic.getCity(expect_city)}}</view> 
+            </navigator>
+
+            <image src='/images/Combined Shape.png'></image>
+        </view>
+
+         <view class='item clearfix'>
+            <view class='left'>天数/周</view>
+            <view class='text' bindtap='dayFunc'>{{logic.getDay(week_available)}}</view>
+            <image src='/images/Combined Shape.png'></image>
+        </view>
+
+        <view class='item clearfix'>
+            <view class='left'>期望日薪</view>
+            <view class='text' bindtap='money'>{{logic.getMoney(salary_range)}}</view>
+            <image src='/images/Combined Shape.png'></image>
+        </view>
+
+        <view class='item clearfix'>
+            <view class='left'>开始时间</view>
+            <view class='text'>
+                <picker mode="date" data-type="start" value="{{period_start}}" star="1980-12-12" bindchange="bindDateChange">
+                    <view class="picker">
+                        {{period_start}}
+                    </view>
+                </picker>
+            </view>
+            <image src='/images/Combined Shape.png'></image>
+        </view>
+
+        <view class='item clearfix'>
+            <view class='left'>结束时间</view>
+            <view class='text'>
+                <picker mode="date" data-type="end" value="{{period_finish}}" star="1980-12-12"  bindchange="bindDateChange">
+                    <view class="picker">
+                        {{period_finish}}
+                    </view>
+                </picker>
+            </view>
+            <image src='/images/Combined Shape.png'></image>
+        </view>
+        
+    </view> 
+
+
+    <view class='btn'>
+        <button type="primary" disabled="{{disabled}}" bindtap="submit">保存</button>
+    </view>
+    
+</view>
+

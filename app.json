@@ -1,0 +1,39 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/adress/adress",
+    "pages/search/search",
+    "pages/user/user",
+    "pages/detail/detail",
+    "pages/companey/companey",
+    "pages/resume/resume",
+    "pages/collect/collect",
+    "pages/record/record",
+    "pages/delivery/delivery",
+    "pages/personal/basic/basic",
+    "pages/personal/educate/educate",
+    "pages/personal/educateList/educateList",
+    "pages/personal/practice/practice",
+    "pages/personal/practiceList/practiceList",
+    "pages/personal/activities/activities",
+    "pages/personal/actList/actList",
+    "pages/personal/certificate/certificate",
+    "pages/personal/honor/honor",
+    "pages/personal/honorList/honorList",
+    "pages/personal/self/self",
+    "pages/personal/job/job",
+    "pages/personal/jobsList/jobsList",
+    "pages/personal/internship/internship",
+    "pages/personal/adress/adress",
+    "pages/personal/diploma/diploma",
+    "pages/personal/diplomaList/diplomaList",
+    "pages/bind/bind"
+  ],
+  "window":{
+    "backgroundTextStyle":"#29a1ff",
+    "navigationBarBackgroundColor": "#29a1ff",
+    "navigationBarTextStyle":"#fff",
+    "enablePullDownRefresh": true
+  }
+}

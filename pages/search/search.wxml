@@ -1,0 +1,121 @@
+<!--index.wxml-->
+<view class="container">
+<!-- S search -->
+    <view class="search">
+      <view class="select-city" bindtap="adress">
+      {{cityInfo.city}}
+      <image src="../index/image/down.png" ></image>
+      </view>
+      <view class="information">
+          <view>
+              <image style="" src="image/Oval.png" ></image>
+          </view>
+          <input type="text" placeholder="搜索职位信息" bindinput="bindKeyInput" />
+      </view>
+      <!-- <input type="text" /> -->
+      <view class="turn-user" bindtap="search">
+          搜索
+      </view>
+    </view>
+    <!-- S search -->
+
+    <!-- S condition -->
+    <view class="shadow" style="height:{{scrollHeight}}px;" wx:if="{{positionIf||emulateListIf||graduationListIf}}"></view>
+    <view class="condition" wx:if="{{!show}}">
+      <view class="top clearfix">
+          <view class="position view" bindtap="change" data-id="1">
+              <view class="text">
+                 <text class="{{positionIf?'color':''}}">职位类别</text>
+                 <image wx:if="{{!positionIf}}" src="image/down.png" ></image>
+                 <image wx:if="{{positionIf}}" src="image/up.png" ></image>
+              </view>
+          </view>
+          <view class="emulate view" data-id='2' bindtap="change">
+              <view class="text">
+                  <text class="{{emulateListIf?'color':''}}">学历要求</text>
+                  <image wx:if="{{!emulateListIf}}" src="image/down.png" ></image>
+                  <image wx:if="{{emulateListIf}}" src="image/up.png" ></image>
+              </view>
+          </view>
+          <view class="graduation view" data-id='3' bindtap="change">
+              <view class="text">
+                  <text class="{{graduationListIf?'color':''}}">毕业年份</text>
+                  <image wx:if="{{!graduationListIf}}" src="image/down.png" ></image>
+                  <image wx:if="{{graduationListIf}}" src="image/up.png" ></image>
+              </view>
+          </view>
+      </view>
+
+      <view class="list" wx:if="{{positionIf}}">
+         <view class="position-list">
+             <text data-id='' data-name='1' bindtap="conditionFun">全部</text> 
+             <text wx:for="{{positionList}}" data-name='1'  data-id='{{item.pkid}}'  bindtap="conditionFun">{{item.title}}</text> 
+         </view>
+      </view>
+
+      <view class="list" wx:if="{{emulateListIf}}">
+         <view class="position-list">
+             <text wx:for="{{emulateList}}" data-name='2'  data-id='{{item.id}}'  bindtap="conditionFun">{{item.name}}</text> 
+         </view>
+      </view>
+
+      <view class="list" wx:if="{{graduationListIf}}">
+         <view class="position-list">
+             <text data-id='' data-name='3' bindtap="conditionFun">全部</text> 
+             <text wx:for="{{graduationList}}" data-name='3'  data-id='{{item}}'  bindtap="conditionFun">{{item}}</text> 
+         </view>
+      </view>
+      
+    </view>
+    <!-- E condition -->
+
+    <!-- S history  -->
+    <view class="story" wx:if="{{show}}">
+      <view class="history" wx:if="{{history.length>0}}">
+        <view class="top">
+          历史搜索
+          <text bindtap="clear">清空</text>
+        </view>
+        <view class="history-list">
+            <text wx:for="{{history}}" bindtap="goToSearch" data-title='{{item.title}}'>{{item.title}}</text>
+        </view>
+      </view>
+
+      <view class="hot" wx:if="{{hot.length>0}}">
+        <view class="top">
+          热门搜索
+          <!-- <text>换一批</text> -->
+        </view>
+        <view class="hot-list">
+           <text wx:for="{{hot}}" bindtap="goToSearch" data-title='{{item.title}}'>{{item.title}}</text>
+        </view>
+      </view>
+    </view> 
+    <!-- E history  -->
+
+  <scroll-view scroll-y="true" wx:if="{{!show}}"  style="height:{{scrollHeight}}px;" class="list" bindscrolltolower="bindDownLoad" >
+    <!-- S index-list -->
+    <view class="index-list">
+          <view class="each clearfix" wx:for="{{userInfo}}">
+            <navigator url="../detail/detail?id={{item.pkid}}" hover-class="navigator-hover">
+                <view class="left">
+                    <image src="{{item.logo}}" style='width: 136rpx; height: 136rpx;'></image>
+                </view>
+                <view class="right">
+                    <text class="title">{{item.title}}</text>
+                    <text class="name">{{item.enterprise_name}}</text>
+                    <text class="tip">{{item.salary_range}} | {{item.education}} | {{item.week_available}}</text>
+                </view>
+
+                <view class="city">{{item.region_name}}</view>
+            </navigator>
+          </view>
+    </view>
+    <!-- E index-list -->
+    <view class="noMore" wx:if='{{!loading}}'>没有更多了</view>
+    <view class="loading" wx:if='{{loading}}'>
+      <image src="../../images/loading.gif" ></image>
+      数据加载中
+    </view>
+  </scroll-view>
+</view>

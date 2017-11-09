@@ -1,0 +1,74 @@
+<!--pages/personal/practice/practice.wxml-->
+<wxs src="filter.wxs" module="logic" />
+<view class='container'>
+    <view class='itemList'>
+        <view class='item clearfix'>
+            <view class='left'>企业名称</view>
+            <view class='text'>
+                <input bindinput="bindKeyInput"  value='{{organization}}' data-type='organization' placeholder="{{logic.filter(1,initData.organization)}}"/>
+            </view>
+        </view>
+
+        <view class='item clearfix'>
+            <view class='left'>岗位名称</view>
+            <view class='text'>
+                <input bindinput="bindKeyInput"  value='{{quarters}}'  data-type='quarters' placeholder="{{logic.filter(2,initData.quarters)}}"/>
+            </view>
+        </view>
+
+        <view class='item clearfix'>
+            <view class='left'>开始时间</view>
+            <view class='text'>
+                <picker mode="date" data-type="start" value="{{start_time}}" star="1980-12-12" bindchange="bindDateChange">
+                    <view class="picker">
+                        {{start_time}}
+                    </view>
+                </picker>
+            </view>
+            <image src='/images/Combined Shape.png'></image>
+        </view>
+
+        <view class='item clearfix'>
+            <view class='left'>结束时间</view>
+            <view class='text'>
+                <picker mode="date" data-type="end" value="{{finish_time}}" star="1980-12-12"  bindchange="bindDateChange">
+                    <view class="picker">
+                        {{finish_time}}
+                    </view>
+                </picker>
+            </view>
+            <image src='/images/Combined Shape.png'></image>
+        </view>
+
+        <view class='item special clearfix'>
+            <view class='clearfix'>
+              <view class='left'>职务描述</view>
+              <view class='text' wx:if="{{showText}}">{{textNum}} / 300</view>
+            </view>
+
+            <view class="section">
+                <textarea bindinput="bindKeyInput" maxlength='300' value='{{content}}' data-type='content' placeholder="" />
+            </view>
+
+            <view class='tip' wx:if="{{show}}">
+                <view>用心填写实习经历，可有效增加面试机会哦！</view>
+                <view>友情提示：</view>
+                <view>1.实习期间的主要工作</view>
+                <view>2.获得哪些奖励或成绩</view>
+                <view>3.锻炼了哪些职场技能</view>
+                <view>4.提升了哪些软件素养</view>
+            </view>
+        </view>
+        
+    </view> 
+
+
+    <view class='btn'>
+        <button type="primary" disabled="{{disabled}}" bindtap="submit">保存</button>
+    </view>
+
+    <view class='btn' bindtap="deletes" wx:if="{{!show}}">
+        <view>删除</view>
+    </view>
+    
+</view>

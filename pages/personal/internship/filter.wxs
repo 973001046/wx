@@ -1,0 +1,73 @@
+var filter = function(id){
+    if(id == 1 ){
+      return '财务/审计/税务'
+    } else if (id == 8){
+      return '银行/信托/保险/证券'
+    } else if (id == 17) {
+      return '资管/融资租赁/财富管理'
+    } else if (id == 26) {
+      return '投资/基金/期货'
+    } else if (id == 34) {
+      return '市场/人资/咨询'
+    } else if (id == 43) {
+      return '其他类别'
+    } else{
+      return '请选择职位类别'
+    }
+}
+
+var getDay = function (id) {
+  if (id == 1) {
+    return '1天'
+  } else if (id == 2) {
+    return '2天'
+  } else if (id == 3) {
+    return '3天'
+  } else if (id == 4) {
+    return '4天'
+  } else if (id == 5) {
+    return '5天'
+  } else{
+    return '请选择职位类别'
+  }
+}
+
+var getMoney = function (id) {
+  if (id == 1) {
+    return '50元以下/天'
+  } else if (id == 2) {
+    return '50~99元/天'
+  } else if (id == 3) {
+    return '100~200元/天'
+  } else if (id == 4) {
+    return '200元以上/天'
+  } else {
+    return '请选择职位类别'
+  }
+}
+
+var getCity = function (arr) {
+  var _length = arr.length;
+  if (_length == 1){
+    return arr[0].region_name
+  } else if (_length > 1){
+    var text = '';
+    for(var i = 0;i<_length;i++){
+      if (i != _length-1){
+         text += arr[i].region_name + '、';
+       } else{
+         text += arr[i].region_name;
+       }
+    }
+    return text; 
+  }else{
+    return '请选择期望城市'
+  }
+}
+
+module.exports = {
+  filter: filter,
+  getDay: getDay,
+  getMoney: getMoney,
+  getCity: getCity
+}

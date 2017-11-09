@@ -1,0 +1,179 @@
+<!--pages/delivery/delivery.wxml-->
+<view class='container'>  
+    <view class="index-list">
+          <view class="each clearfix">
+            <navigator url="../detail/detail?id={{initData.info.post_id}}" hover-class="navigator-hover">
+              <view class="left">
+                  <image src="{{initData.info.logo}}" style='width: 136rpx; height: 136rpx;'></image>
+              </view>
+              <view class="right">
+                  <text class="title">{{initData.info.post_title}}</text>
+                  <text class="name">{{initData.info.enterprise_name}}</text>
+                  <text class="tip">{{initData.info.post_city}} | {{initData.info.create_time}}</text>
+              </view>
+
+              <view class="city">
+                  <image src='/images/Combined Shape.png'></image>
+              </view>
+            </navigator>
+          </view>
+    </view>
+    
+    <view class='information'>
+        <view class='top'>{{initData.info.resumepost_status}}</view>
+        <view class='reback'>
+            <view class='status' wx:if="{{initData.post_result.status == 1}}">HR已收到你的简历，请耐心等待</view>
+            <view class='status' wx:if="{{initData.post_result.status == 2}}">HR已查看你的简历，请耐心等待反馈</view>
+            <view class='status' wx:if="{{initData.post_result.status == 3}}">
+                <view class='time'>
+                    <view class='tip'>
+                      <text>面试时间</text>
+                      <view class='round'>round</view>
+                    </view>
+                    <view class='bottom'>{{initData.post_result.date_time}}</view>
+                </view>
+
+                <view class='time'>
+                     <view class='tip'>
+                        <text>面试地点</text>
+                        <view class='round'>round</view>
+                    </view>
+                    <view class='bottom'>{{initData.post_result.date_place}}</view>
+                </view>
+
+                <view class='time'>
+                     <view class='tip'>
+                        <text>联系人</text>
+                        <view class='round'>round</view>
+                    </view>
+                    <view class='bottom'>{{initData.post_result.contact_name}}</view>
+                </view>
+
+                <view class='time'>
+                     <view class='tip'>
+                        <text>联系电话</text>
+                        <view class='round'>round</view>
+                    </view>
+                    <view class='bottom'>{{initData.post_result.contact_phone}}</view>
+                </view>
+
+                <view class='time'>
+                     <view class='tip'>
+                        <text>补充内容</text>
+                        <view class='round'>round</view>
+                    </view>
+                    <view class='bottom'>{{initData.post_result.addition}}</view>
+                </view>
+            </view>
+            <view class='status' wx:if="{{initData.post_result.status == 5}}">您的简历已进入待定状态，请耐心等待反馈</view>
+            <view class='status' wx:if="{{initData.post_result.status == 4}}">非常荣幸收到你的简历，但你的简历与该职位条件不太匹配，祝你找到满意的工作</view>
+        </view>
+
+        <view class='stap' wx:if="{{initData.post_result.status == 1}}">
+            <view class='ever' >
+                <view class='title'>
+                    <text>简历投递成功，等待对方查看</text>
+                    <view class='time'>{{initData.time_base.create_time}}</view>
+                    <image src='image/td_s.png'></image>
+                </view>
+            </view>
+        </view>
+
+        <view class='stap' wx:if="{{initData.post_result.status == 2}}">
+            <view class='ever' >
+                <view class='title'>
+                    <text>简历投递成功，等待对方查看</text>
+                    <view class='time'>{{initData.time_base.create_time}}</view>
+                    <image src='image/td_n.png'></image>
+                </view>
+            </view>
+
+            <view class='ever' >
+                <view class='title'>
+                    <text>简历以被查看，请耐心等待</text>
+                    <view class='time'>{{initData.time_base.deal_time}}</view>
+                    <image src='image/tz.png'></image>
+                </view>
+            </view>
+        </view>
+
+        <view class='stap' wx:if="{{initData.post_result.status == 3}}">
+            <view class='ever' >
+                <view class='title'>
+                    <text>简历投递成功，等待对方查看</text>
+                    <view class='time'>{{initData.time_base.create_time}}</view>
+                    <image src='image/td_n.png'></image>
+                </view>
+            </view>
+
+            <view class='ever' >
+                <view class='title'>
+                    <text>简历以被查看，请耐心等待</text>
+                    <view class='time'>{{initData.time_base.deal_time}}</view>
+                    <image src='image/ck_n.png'></image>
+                </view>
+            </view>
+
+            <view class='ever' >
+                <view class='title'>
+                    <text>简历已通过，等待面试，请保持联系通畅</text>
+                    <view class='time'>{{initData.time_base.read_time}}</view>
+                    <image src='image/tz.png'></image>
+                </view>
+            </view>
+        </view>
+
+        <view class='stap' wx:if="{{initData.post_result.status == 4}}">
+            <view class='ever' >
+                <view class='title'>
+                    <text>简历投递成功，等待对方查看</text>
+                    <view class='time'>{{initData.time_base.create_time}}</view>
+                    <image src='image/td_n.png'></image>
+                </view>
+            </view>
+
+            <view class='ever' >
+                <view class='title'>
+                    <text>简历以被查看，请耐心等待</text>
+                    <view class='time'>{{initData.time_base.deal_time}}</view>
+                    <image src='image/ck_n.png'></image>
+                </view>
+            </view>
+
+            <view class='ever' >
+                <view class='title'>
+                    <text>简历不适合</text>
+                    <view class='time'>{{initData.time_base.read_time}}</view>
+                    <image src='image/bhs.png'></image>
+                </view>
+            </view>
+        </view>
+
+        <view class='stap' wx:if="{{initData.post_result.status == 5}}">
+            <view class='ever' >
+                <view class='title'>
+                    <text>简历投递成功，等待对方查看</text>
+                    <view class='time'>{{initData.time_base.create_time}}</view>
+                    <image src='image/td_n.png'></image>
+                </view>
+            </view>
+
+            <view class='ever' >
+                <view class='title'>
+                    <text>简历以被查看，请耐心等待</text>
+                    <view class='time'>{{initData.time_base.deal_time}}</view>
+                    <image src='image/ck_n.png'></image>
+                </view>
+            </view>
+
+            <view class='ever' >
+                <view class='title'>
+                    <text>简历待定中，企业需要进一步筛选</text>
+                    <view class='time'>{{initData.time_base.read_time}}</view>
+                    <image src='image/sx_s.png'></image>
+                </view>
+            </view>
+        </view>
+
+    </view>
+</view> 

@@ -1,0 +1,38 @@
+/* pages/record/record.wxss */
+@import "../collect/collect.wxss";
+.index-list .each .tip{
+  position: relative;
+}
+.index-list .each .status{
+  position: absolute;
+  color: #29a1ff;
+  font-size: 30rpx;
+  right: -102rpx;
+  top: 0;
+}
+.tab{
+  height: 88rpx;
+  line-height: 88rpx;
+  border: 1rpx solid #d9d9d9; 
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  z-index: 9;
+}
+.tab view{
+  float: left;
+  width: 25%;
+  text-align: center;
+  font-size: 32rpx;
+  color: #969696;
+}
+.tab view.active{
+  color: #29a1ff;
+  line-height: 84rpx;
+  border-bottom: 4rpx solid #29a1ff; 
+}
+.index-list{
+  padding-top: 88rpx;
+}

@@ -1,0 +1,39 @@
+<!--pages/personal/adress/adress.wxml-->
+<view class="container">
+ <scroll-view scroll-y="true" scroll-into-view="{{toView}}" style="height:{{windowHeight}}rpx">  
+
+      <view class="all-list" wx:if="{{chooseArr.length >= 1}}">
+          <view class="all-city">已选城市</view>
+          <view class="all-city-list chooseList" wx:for="{{chooseArr}}">
+              <text data-city="{{item.region_name}}" data-code="{{item.region_id}}">{{item.region_name}}</text>
+              <image src='image/delete.png' data-key="{{index}}" bindtap='deleteChoose'></image>
+          </view>
+      </view>
+
+    <view class="hot-city">热门城市</view>
+    <view class="hot-city-list">
+        <text wx:for="{{hotcityList}}" data-city="{{item.city}}" data-code="{{item.cityCode}}" bindtap="getCity">{{item.city}}</text>
+    </view>
+
+    <view class="all-list" wx:for="{{allCity}}">
+        <view class="all-city" id="{{'goTo'+item.initial}}">{{item.initial}}</view>
+        <view class="all-city-list">
+            <text wx:for="{{item.cityInfo}}"  data-city="{{item.city}}" data-code="{{item.code}}" bindtap="getCity" >{{item.city}}</text>
+        </view>
+    </view>
+
+    <view class="right-bar">
+        <view wx:for="{{letter}}" class="classname" bindtap="scrollToViewFn" data-id="{{item}}">{{item}}</view>
+    </view>
+  </scroll-view>
+  <view wx:if="{{turnLetter}}" class="show-letter">{{showLetter}}</view>
+
+  <view class='btn'>
+      <button type="default"  hover-class="other-button-hover"> 完成 </button>
+  </view>
+
+  <view class='btn position' bindtap='finish'>
+      <button type="default"  hover-class="other-button-hover"> 完成 </button>
+  </view>
+
+</view>

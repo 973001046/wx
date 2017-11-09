@@ -1,0 +1,58 @@
+<!--pages/personal/educate/educate.wxml-->
+<wxs src="../basic/basic.wxs" module="basicFuc" />
+<view class='container'>
+    <view class='itemList'>
+        <view class='item clearfix'>
+            <view class='left'>学校名称</view>
+            <view class='text'>
+                <input  bindinput="bindKeyInput" value='{{school_name}}' data-type='school_name' placeholder="{{basicFuc.filter(initData.major_title)}}"/>
+            </view>
+        </view>
+
+        <view class='item clearfix'>
+            <view class='left'>就读专业</view>
+            <view class='text'>
+                <input  bindinput="bindKeyInput" value='{{major_title}}' data-type='major_title' placeholder="{{basicFuc.filter(initData.major_title)}}"/>
+            </view>
+        </view>
+
+        <view class='item clearfix'>
+            <view class='left'>学历</view>
+            <view class='text' bindtap='eduFunc'>{{basicFuc.edu(degree)}}</view>
+            <image src='/images/Combined Shape.png'></image>
+        </view>
+
+        <view class='item clearfix'>
+            <view class='left'>入学时间</view>
+            <view class='text'>
+                <picker mode="date" data-type="start" value="{{start_time}}" star="1980-12-12"  bindchange="bindDateChange">
+                    <view class="picker">
+                        {{start_time}}
+                    </view>
+                </picker>
+            </view>
+            <image src='/images/Combined Shape.png'></image>
+        </view>
+
+        <view class='item clearfix'>
+            <view class='left'>毕业时间</view>
+            <view class='text'>
+                <picker mode="date" data-type="end" value="{{finish_time}}" star="1980-12-12"  bindchange="bindDateChange">
+                    <view class="picker">
+                        {{finish_time}}
+                    </view>
+                </picker>
+            </view>
+            <image src='/images/Combined Shape.png'></image>
+        </view>
+    </view>
+
+    <view class='btn'>
+        <button type="primary" disabled="{{disabled}}" bindtap="submit">保存</button>
+    </view>
+    
+
+    <view class='btn' bindtap='deletes' wx-if="{{!show}}">
+        <view>删除</view>
+    </view>
+</view>

@@ -1,0 +1,58 @@
+<!--pages/user/user.wxml-->
+<view class="container">
+  <view class="img">
+    <image src="image/background.png"></image>
+    <view class="user-content">
+          <image src="{{userInfo.avatar}}"></image>  
+        <view class="name">{{userInfo.name}}</view>
+        <view class="information">{{userInfo.living_city.region_name}} | {{userInfo.education}} | {{userInfo.detail_major }}</view>
+    </view>
+  </view>
+
+  <view class="user-list">
+     <navigator url="../resume/resume" hover-class="navigator-hover">
+        <view class="line">
+          <image class="icon" src="image/resume.png"></image>
+          <text>我的简历</text>
+          <view class="point">完整度
+              <text>{{userInfo.complete_rate }}%</text>
+          </view>
+          <image class="img" src="image/yes.png"></image>
+        </view>
+      </navigator>
+
+     <navigator url="../record/record" hover-class="navigator-hover">
+        <view class="line">
+          <image class="icon" src="image/td.png"></image>
+          <text>投递记录</text>
+          <image class="img" src="image/yes.png"></image>
+        </view>
+     </navigator>
+
+     <navigator url="../collect/collect" hover-class="navigator-hover">
+        <view class="line" style='border-bottom: none'>
+          <image class="icon" src="image/sc.png"></image>
+          <text>我的收藏</text>
+          <image class="img" src="image/yes.png"></image>
+        </view>
+     </navigator>
+  </view>
+
+  <view class="user-list">
+      <view class="line" style='border-bottom: none'>
+         <image class="icon" src="image/resume.png"></image>
+         <text>绑定手机</text>
+
+         <navigator url="../bind/bind" hover-class="navigator-hover">
+            <view class="point" style='color: #29a2ff' wx-if="{{userInfo.contact_mobile == ''}}">未绑定</view>
+         </navigator>
+
+         <image class="img" src="image/yes.png"></image>
+         <!-- <view class='tip'>未绑定</view> -->
+         <view class='tip' wx-if="{{userInfo.contact_mobile != ''}}">
+            <text class='tel'>{{userInfo.contact_mobile}}</text>
+            <!-- <text class='change'>更改</text> -->
+         </view>
+      </view>
+  </view>
+</view>

@@ -1,0 +1,17 @@
+<!--pages/personal/self/self.wxml-->
+<view class='container'>
+    <view class='itemList'>
+        <view class='item special clearfix'>
+            <view class="section">
+                <textarea placeholder="评价一下自己,字数控制在300字以内" value='{{text}}' bindinput='bindKeyInput' data-type='content' maxlength='300'/>
+            </view>
+            <view class='num' wx:if="{{show}}">{{textNum}} / 300</view>
+        </view>
+
+       
+    </view> 
+
+    <view class='btn'>
+        <button type="primary" disabled="{{disabled}}" bindtap="submit">保存</button>
+    </view>
+</view>

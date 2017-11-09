@@ -1,0 +1,33 @@
+<!--pages/collect/collect.wxml-->
+<view class='container collect'>
+    <!-- <scroll-view scroll-y="true" style="height:{{scrollHeight}}px;" class="list" bindscrolltolower="bindDownLoad" > -->
+    <view class='scroll-view'>
+      <!-- S index-list -->
+      <view class="index-list">
+            <view class="each clearfix" wx:for="{{initList}}">
+                <navigator url="../detail/detail?id={{item.pkid}}" hover-class="navigator-hover">
+                    <view class="left">
+                        <image src="{{item.logo}}" style='width: 136rpx; height: 136rpx;'></image>
+                    </view>
+                    <view class="right">
+                        <text class="title">{{item.title}}</text>
+                        <text class="name">{{item.enterprise_name}}</text>
+                        <text class="tip">{{item.salary_range}} | {{item.education}} | {{item.week_available}}</text>
+                    </view>
+
+                    <view class="city">{{item.post_city}}</view>
+                </navigator>
+
+                <view class='del' data-id='{{item.pkid}}' data-index="{{index}}" bindtap='del'>删除</view>
+            </view>
+      </view>
+      <!-- E index-list -->
+
+      <view class="noMore" wx:if='{{!loading}}'>没有更多了</view>
+      <view class="loading" wx:if='{{loading}}'>
+        <image src="../../images/loading.gif" ></image>
+        数据加载中
+      </view>
+    </view>
+    <!-- </scroll-view> -->
+</view>

@@ -1,0 +1,26 @@
+<!--pages/personal/practiceList/practiceList.wxml-->
+<view class='container'>
+    <view class='itemList'>
+        <view class='item' wx:for="{{list}}">
+            <view class='top'>
+                <text>{{item.start_time}}至{{item.finish_time}}</text>
+                <text>上海</text>
+                <navigator url="/pages/personal/practice/practice?id={{item.pkid}}">
+                   <image src='../../resume/image/edit.png'></image>
+                </navigator>
+            </view>
+
+            <view class='center'>
+                <text>{{item.organization}}</text>
+                <text class='line'>|</text>
+                <text>{{item.quarters}}</text>
+            </view>
+
+            <view class='bottom'>{{item.content}}</view>
+        </view>
+    </view>
+
+    <navigator url="/pages/personal/practice/practice">
+       <button type="primary"> 添加实习经历 </button>
+    </navigator>
+</view>

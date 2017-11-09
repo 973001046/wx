@@ -1,0 +1,78 @@
+/* pages/user/user.wxss */
+page{
+  background-color: #f6f7f8;
+}
+.img image{
+  width: 100%;
+  height: 335rpx;
+  position: relative;
+}
+.img .user-content{
+  position: absolute;
+  top: 48rpx;
+  width: 100%;
+  left: 0;
+  text-align: center;
+}
+.img .user-content image{
+  width: 136rpx;
+  height: 136rpx;
+  border: 1rpx solid #8dc5f1;
+  border-radius: 50%;
+}
+.img .user-content .name{
+  color: #323232;
+  font-size: 32rpx;
+  margin-bottom: 10rpx;
+  margin-top: 10rpx;
+}
+.img .user-content .information{
+  color: #969696;
+  font-size: 26rpx;
+}
+.user-list{
+  margin-top: 40rpx;
+  background-color: #fff;
+}
+.user-list .line{
+  line-height: 88rpx;
+  margin-left: 90rpx;
+  border-bottom: 1rpx solid #eee;
+  color: #646464;
+  font-size: 32rpx;
+  position: relative;
+}
+.user-list .line .icon{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  top: 22rpx;
+  left: -65rpx;
+}
+.user-list .line .img{
+  width: 16rpx;
+  height: 30rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 27rpx;  
+}
+.user-list .line .point{
+  position: absolute;
+  right: 70rpx;
+  top: 0;
+  font-size: 26rpx;
+}
+.user-list .line .point text{
+  color: #29a1ff;
+}
+.user-list .line .tip{
+  position: absolute;
+  line-height: 88rpx;
+  top: 0;
+  font-size: 26rpx;
+  color: #969696;
+  right:60rpx;
+}
+.user-list .line .tip text{
+  margin-right: 20rpx;
+}

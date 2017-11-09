@@ -1,0 +1,43 @@
+<!--pages/record/record.wxml-->
+<view class='container'>  
+    <!-- S tap -->
+    <view class="tab clearfix"> 
+        <view class="{{tabIndex=='1'? 'active' : ''}}"  bindtap="tab" data-id="1">全部</view> 
+        <view class="{{tabIndex=='2'? 'active' : ''}}"  bindtap="tab" data-id="2">已查看</view> 
+        <view class="{{tabIndex=='3'? 'active' : ''}}"  bindtap="tab" data-id="3">通知面试</view> 
+        <view class="{{tabIndex=='4'? 'active' : ''}}"  bindtap="tab" data-id="4">不合适</view> 
+    </view> 
+    <!-- E tap -->
+
+    <!-- <scroll-view scroll-y="true" style="height:{{scrollHeight}}px;" class="list" bindscrolltolower="bindDownLoad" > -->
+    <view class='scroll-view'>
+      <!-- S index-list -->
+      <view class="index-list">
+            <view class="each clearfix" wx:for="{{initList}}">
+                <navigator url="../delivery/delivery?id={{item.pkid}}" hover-class="navigator-hover">
+                    <view class="left">
+                        <image src="{{item.logo}}" style='width: 136rpx; height: 136rpx;'></image>
+                    </view>
+                    <view class="right">
+                        <text class="title">{{item.post_title}}</text>
+                        <text class="name">{{item.enterprise_name}}</text>
+                        <view class="tip">
+                            <text>{{item.create_time}}</text>
+                            <view class='status'>{{item.resumepost_status}}</view>
+                        </view>
+                    </view>
+
+                    <view class="city">{{item.post_city}}</view>
+                </navigator>
+            </view>
+      </view>
+      <!-- E index-list -->
+
+      <view class="noMore" wx:if='{{!loading}}'>没有更多了</view>
+      <view class="loading" wx:if='{{loading}}'>
+        <image src="../../images/loading.gif" ></image>
+        数据加载中
+      </view>
+    </view>
+    <!-- </scroll-view> -->
+</view>

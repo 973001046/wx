@@ -1,0 +1,24 @@
+<!--pages/personal/jobsList/jobsList.wxml-->
+<view class='container'>
+    <view class='itemList'>
+        <view class='item' wx:for="{{list}}">
+            <view class='top'>
+                <text>{{item.start_time}}至{{item.finish_time}}</text>
+                <!-- <text>上海</text> -->
+                <navigator url="/pages/personal/job/job?id={{item.pkid}}&index={{index}}">
+                   <image src='../../resume/image/edit.png'></image>
+                </navigator>
+            </view>
+
+            <view class='center'>
+                <text>{{item.job_title}}</text>
+            </view>
+
+            <view class='bottom'>{{item.description}}</view>
+        </view>
+    </view>
+
+    <navigator url="/pages/personal/job/job">
+       <button type="primary"> 添加校内职位 </button>
+    </navigator>
+</view>

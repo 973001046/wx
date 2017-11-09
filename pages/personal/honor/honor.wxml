@@ -1,0 +1,39 @@
+<!--pages/personal/honor/honor.wxml-->
+<view class='container'>
+    <view class='itemList'>
+        <view class='item clearfix'>
+            <view class='left'>获奖时间</view>
+            <view class='text'>
+                <picker mode="date" data-type="period" value="{{period}}" star="1980-12-12" bindchange="bindDateChange">
+                    <view class="picker">
+                        {{period}}
+                    </view>
+                </picker>
+            </view>
+            <image src='/images/Combined Shape.png'></image>
+        </view>
+
+        <view class='item special clearfix'>
+            <view class='clearfix'>
+              <view class='left'>奖项名称</view>
+              <view class='text' wx:if="{{showText}}">{{textNum}} / 32</view>
+            </view>
+
+            <view class="section">
+                <textarea maxlength='32' data-type="content" bindinput='bindKeyInput' value='{{description}}' placeholder="请输入奖项名称,例如：管理会计案例分析大赛校级二等奖"/>
+            </view>
+
+        </view>
+        
+    </view> 
+
+
+    <view class='btn'>
+        <button type="primary" bindtap="submit">保存</button>
+    </view>
+
+    <view class='btn' wx:if="{{!show}}" bindtap='deletes'>
+        <view>删除</view>
+    </view>
+    
+</view>

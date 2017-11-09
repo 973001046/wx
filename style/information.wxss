@@ -1,0 +1,51 @@
+page{
+  background-color: #f6f7f8;
+}
+.itemList{
+  background-color: #fff;
+  margin-top: 20rpx;
+  padding-left: 30rpx;
+}
+.itemList .left{
+  float: left;
+  line-height: 88rpx;
+  color: #323232;
+  font-size: 32rpx;
+}
+.itemList .text{
+  float: right;
+  line-height: 88rpx;
+  font-size: 28rpx;
+  color: #969696;
+}
+.itemList .text input{
+  height: 88rpx;
+  text-align: right;
+  font-size: 28rpx;
+  color: #969696;
+}
+.itemList .item{
+  border-bottom: 1rpx solid #eee;
+  padding-right: 80rpx;
+  position: relative;
+}
+.itemList .item:last-child{
+  border-bottom: none;
+}
+.itemList .item image{
+  width:20rpx;
+  height:30rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 29rpx;
+}
+.btn button{
+  width: 670rpx;
+  background-color: #29a1ff;
+  margin: 60rpx auto;
+}
+.container .btn view{
+  text-align: center;
+  font-size: 36rpx;
+  color: #29a1ff;
+}

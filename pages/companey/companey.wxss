@@ -1,0 +1,128 @@
+/* pages/companey/companey.wxss */
+.companey{
+  border-bottom: 20rpx solid #f6f7f8; 
+  padding: 40rpx 30rpx 30rpx  ;
+}
+.companey .img{
+  width: 120rpx;
+  height: 120rpx;
+  border: 1rpx solid #eee;
+  border-radius: 8rpx;
+  overflow: hidden;
+  float: left; 
+}
+.companey .img image{
+  width: 120rpx;
+  height: 120rpx;
+}
+.companey .content{
+  float: left; 
+  width: 550rpx;
+  margin-left: 15rpx;
+  height: 120rpx;
+}
+.companey .content .name{
+  display: inline-block;
+  color: #323232;
+  font-size: 32rpx;
+  width: 100%;
+  line-height: 44rpx;
+  max-height: 88rpx;
+  overflow: hidden; 
+}
+.companey .content .tip{
+  display: inline-block;
+  color: #969696;
+  font-size: 26rpx;
+  width: 100%;
+  line-height: 44rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+.detail{
+  padding-bottom: 30rpx;
+}
+.detail .title{
+  padding: 30rpx;
+  color: #646464;
+  font-size: 32rpx;
+}
+.detail .content{
+  padding: 0 30rpx;
+  color: #646464;
+  font-size: 28rpx;
+  line-height:50rpx;
+}
+.list{
+  border-top: 20rpx solid #f6f7f8; 
+}
+.list .title{
+   color: #646464;
+   font-size: 32rpx;
+   margin: 0 30rpx;
+   padding: 30rpx 0;
+   border-bottom: 1rpx solid #d9d9d9;
+}
+.list .each{
+   margin: 0 30rpx;
+   border-bottom: 1rpx solid #eee;
+}
+.list .each .top{
+  color: #323232;
+  font-size: 30rpx;
+  padding: 30rpx 0;
+  position: relative;
+}
+.list .each .top .head{
+  width: 560rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.list .each .top .adress{
+  position: absolute;
+  right: 0;
+  color: #969696;
+  font-size: 26rpx;
+  top: 30rpx;
+}
+.list .each .bottom{
+  color: #969696;
+  font-size: 26rpx;
+  position: relative;
+  padding-bottom: 30rpx;
+}
+.list .each .bottom .tip{
+  width: 540rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.list .each .bottom .time{
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.clickMore{
+  width: 100rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  margin: 30rpx auto;
+  position: relative;
+  font-size: 26rpx;
+  color: #29a1ff;
+}
+.clickMore image{
+  position: absolute;
+  width: 32rpx;
+  height: 16rpx;
+  right: 0;
+  top: 12rpx;
+}
+.limit{
+  display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 4;
+overflow: hidden;
+}

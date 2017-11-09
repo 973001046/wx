@@ -1,0 +1,47 @@
+/* pages/bind/bind.wxss */
+page{
+  background-color: #f6f7f9;
+}
+.img{
+  text-align: center;
+  margin: 50rpx 0;
+}
+.img image{
+  width: 400rpx;
+  height: 340rpx;
+}
+.text{
+  background-color: #fff;
+}
+.text .section{
+  margin-left: 30rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-bottom: 1rpx solid #eee;
+  position: relative;
+}
+.text .section input{
+  height: 90rpx;
+  line-height: 90rpx;
+  text-indent: 10rpx;
+  font-size: 35rpx;
+}
+.text .section text{
+  display: block;
+  position: absolute;
+  right: 30rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  top: 0;
+  color: #95cffd;
+  font-size:32rpx;
+  z-index: 99;
+}
+.btn button{
+  margin: 50rpx 30rpx;
+  background-color: #29a2ff;
+}
+button[disabled][type="primary"] {
+  background-color:#29a2ff;
+  opacity: 0.5;
+}

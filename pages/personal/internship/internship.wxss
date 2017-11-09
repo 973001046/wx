@@ -1,0 +1,30 @@
+/* pages/personal/internship/internship.wxss */
+@import "../../../style/information.wxss";
+.itemList .special{
+   padding-right: 30rpx;
+}
+.itemList .special .text{
+   font-size: 22rpx;
+}
+.itemList .special .section textarea{
+  width: 690rpx;
+  height: 320rpx;
+  font-size: 28rpx;
+  color: #969696;
+}
+.itemList .special .tip{
+  position: absolute;
+  font-size: 28rpx;
+  color: #bababa;
+  line-height: 40rpx;
+  width: 690rpx;
+  top: 88rpx;
+}
+.itemList .text{
+  width: 420rpx;
+  text-align: right;
+  height: 88rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,26 @@
+<!--pages/personal/practice/practice.wxml-->
+<view class='container'>
+    <view class='itemList'>
+        <view class='item' wx:for="{{list}}">
+            <view class='top'>
+                <text>{{item.start_time}}至{{item.finish_time}}</text>
+                <!-- <text>上海</text> -->
+                <navigator url="/pages/personal/educate/educate?id={{item.pkid}}&index={{index}}">
+                   <image src='../../resume/image/edit.png'></image>
+                </navigator>
+            </view>
+
+            <view class='center'>
+                <text>{{item.school_name}}</text>
+            </view>
+
+             <view class='center' style='padding:20rpx 0 40rpx 0;'>
+                <text>{{item.major_title}}</text>
+            </view>
+        </view>
+    </view>
+
+    <navigator url="/pages/personal/educate/educate">
+       <button type="primary"> 添加教育背景 </button>
+    </navigator>
+</view>

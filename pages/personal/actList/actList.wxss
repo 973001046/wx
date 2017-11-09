@@ -1,0 +1,49 @@
+/* pages/personal/actList/actList.wxss */
+page{
+  background-color: #f6f7f9;
+}
+.itemList{
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+.itemList .item{
+  margin: 0 30rpx;
+  border-bottom: 1rpx dashed #eee;
+}
+.itemList .item:last-child{
+  border-bottom: none;
+}
+.itemList .item .top{
+  color: #969696;
+  font-size: 30rpx;
+  padding: 40rpx 0 20rpx 0;
+  position: relative;
+}
+.itemList .item .top image{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  right: 0;
+  top: 45rpx;
+}
+.itemList .item .top text{
+   margin-right: 80rpx;
+}
+.itemList .item .center{
+   color: #646464;
+   font-size: 30rpx;
+}
+.itemList .item .center .line{
+  margin: 0 20rpx;
+  font-size: 26rpx;
+  color: #d9d9d9;
+}
+.itemList .item .bottom{
+  color: #979797;
+  font-size: 30rpx;
+  padding: 20rpx 0 40rpx 0;
+}
+button{
+  background-color: #29a2ff;
+  margin: 60rpx;
+}

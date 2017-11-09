@@ -1,0 +1,75 @@
+/* pages/delivery/delivery.wxss */
+@import "../collect/collect.wxss";
+.index-list .each{
+  border-bottom: 0;
+}
+.index-list .each .city{
+  margin-top:55rpx;
+}
+.index-list .each .city image{
+  width:24rpx;
+  height:35rpx;
+}
+.information{
+  border-top: 20rpx solid #f6f7f8;
+}
+.information .top{
+  margin: 30rpx;
+  color: #29a1ff;
+  font-size: 32rpx;
+}
+.information .reback .status{
+   margin: 0 30rpx;
+   border-bottom: 1rpx solid #eee;
+   font-size: 32rpx;
+   color: #969696;
+   padding-bottom: 30rpx;
+}
+.stap{
+  border-left: 4rpx solid #dee9f2; 
+  margin-left: 50rpx;
+  padding-left: 40rpx;
+  margin-top:30rpx;
+}
+.stap .title{
+  margin-bottom: 94rpx;
+  color: #323232;
+  font-size: 28rpx;
+  position: relative;
+}
+.stap .title .time{
+  font-size: 26rpx;
+  color: #969696;
+  line-height: 28rpx;
+  position: absolute;
+  bottom: -40rpx;
+}
+.stap .title image{
+  width: 54rpx;
+  height: 54rpx;
+  left:-68rpx;
+  top:-8rpx;
+  position: absolute
+}
+.information .reback .status .time .tip{
+   color: #969696;
+   font-size: 32rpx;
+   padding-left: 20rpx;
+   position: relative;
+}
+.information .reback .status .time .tip .round{
+   width: 8rpx;
+   height: 8rpx;
+   border-radius: 50%;
+   background-color: #969696;
+   position: absolute;
+   left: 0;
+   overflow: hidden;
+   top:22rpx;
+}
+.information .reback .status .time .bottom{
+  padding-left: 20rpx;
+  color: #646464;
+  font-size: 28rpx;
+  margin: 20rpx 0;
+}

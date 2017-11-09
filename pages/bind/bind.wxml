@@ -1,0 +1,22 @@
+<!--pages/bind/bind.wxml-->
+<view class='container'>
+    <view class='img'>
+        <image src='image/bd.png'></image>
+    </view>
+
+    <view class='text'>
+        <view class="section">
+            <input  maxlength="11" data-type='tel' bindinput='bind' bindblur='blur' placeholder=" 请输入手机号码" />
+        </view> 
+
+        <view class="section">
+            <input  maxlength="6" data-type='code' bindinput='bind' bindblur='blur' placeholder="请输入短信验证码" />
+            <text bindtap='getCode' wx:if="{{show}}">获取验证码</text>
+            <text wx:if="{{!show}}">{{time}}s</text>
+        </view> 
+    </view>
+
+    <view class='btn' bindtap='submit'>
+        <button type="primary" bindtap="submit">绑定</button>
+    </view>
+</view>

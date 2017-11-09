@@ -1,0 +1,130 @@
+<!--pages/detail/detail.wxml-->
+<view class="container">
+   <view class='title'>{{detail.title}}</view>
+   <view class='time'>发布时间：{{detail.create_time}}</view>
+   <!-- S list tip -->
+   <view class='list clearfix'>
+      <view class='left'>
+          <view>
+            <image src='image/rmb.png'></image>
+            {{detail.salary_range}}
+          </view>
+
+          <view>
+            <image src='image/education.png'></image>
+            {{detail.education}}
+          </view>
+
+          <view>
+            <image src='image/days.png'></image>
+            {{detail.week_available}}
+          </view>
+      </view>
+      <view class='center'>
+          <view>
+            <image src='image/city.png'></image>
+            {{detail.enter_city_name}}
+          </view>
+          <view>
+            <image src='image/major.png'></image>
+            {{detail.major_wish}}
+          </view>
+      </view>
+      <view class='right'>
+          <view>
+            <image src='image/work.png'></image>
+            {{detail.keep_on}}
+          </view>
+          <view>
+            <image src='image/date.png'></image>
+            {{detail.graduate_year}}毕业
+          </view>
+      </view>
+   </view>
+   <!-- S list tip -->
+
+   <!-- S companey -->
+   <navigator url="../companey/companey?id={{detail.enterprise_id}}" hover-class="navigator-hover">
+      <view class='companey clearfix'>
+        <view class='left'>
+            <image src='{{detail.logo}}'></image>
+        </view>
+
+        <view class='right'>
+            <view class='name'>{{detail.enterprise_name}}</view>
+            <view class='tip'>{{detail.industry_name}}|{{detail.scale_title}}</view>
+            <image src='/images/Combined Shape.png'></image>
+        </view>  
+      </view>
+  </navigator>
+   <!-- E companey -->
+
+  <!-- S adress -->
+  <view class='adress' bindtap='adressFunc'>
+     <image src='image/city.png'></image>
+     <text>{{detail.address}}</text>
+  </view>
+  <!-- E adress -->
+
+  <!-- S descripation -->
+  <view class='descripation'>
+     <view class='head'>职位开发</view>
+     <view class='content'>
+        <view wx:for="{{descripationText}}">
+          <text wx:if="{{item!=''}}">{{item}}</text>
+          <text wx:if="{{item==''}}"> 　　</text>
+        </view>
+     </view>
+  </view>
+  <!-- E descripation -->
+
+  <!-- S bottomBar -->
+  <view class='bottomBar'>
+     <view class='collect'>
+        <image bindtap='collect' wx:if="{{isCollect == '2'}}" data-id='1' class='small' src='image/sc.png'></image>
+        <image bindtap='collect' wx:if="{{isCollect == '1'}}" data-id='2' src='image/Collection.png'></image>
+     </view>
+
+     <view class='share' bindtap='share'>
+       <image src='image/share.png'></image>
+     </view>
+
+     <view class="btn {{btnStatus == 2?'point':''}}" bindtap='submit'>投递简历</view>
+  </view>
+  <!-- E bottomBar -->
+
+  <!-- S shadow -->
+  <view class='shadow' wx:if='{{show}}'>
+     <view class='content'>
+        <view class='title'>完善简历</view>
+        <view class='tip'>你的建立完整度低于60%，很容易石沉大海或被HR拒绝哦。</view>
+        <view class='double clearfix'>
+           <view class='left' bindtap='submit'>继续投递</view>
+           <view class='right'>
+              <navigator url="../resume/resume" hover-class="navigator-hover">编辑简历</navigator>
+           </view>
+        </view>
+     </view>
+  </view>
+  <!-- E shadow -->
+
+   <!-- S shadow -->
+  <view class='shadow' wx:if='{{low}}'>
+     <view class='content'>
+        <view class='title'>完善简历</view>
+        <view class='tip'>简历完整度低于22%，请先完善简历再进行投递</view>
+        <view class='double clearfix'>
+           <view class='left' bindtap='quit'>继续浏览</view>
+           <view class='right'>
+              <navigator url="../resume/resume" hover-class="navigator-hover">编辑简历</navigator>
+           </view>
+        </view>
+     </view>
+  </view>
+  <!-- E shadow -->
+
+  <view class='shareBg' wx:if="{{shareBg}}">
+      <image src='image/pointer.png'></image>
+  </view>
+
+</view>

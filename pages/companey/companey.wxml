@@ -1,0 +1,49 @@
+<!--pages/companey/companey.wxml-->
+<view class='container'>
+    <!-- S companey -->
+    <view class='companey clearfix'>
+        <view class='img'>
+            <image src='{{info.logo}}'></image>
+        </view>
+
+        <view class='content'>
+            <view class='name'>{{info.full_name}}</view>
+            <view class='tip'>{{info.city_name}} | {{info.scale_title}} | {{info.industry_title}}</view>
+        </view>
+    </view>
+    <!-- E companey -->
+
+    <!-- S detail -->
+    <view class='detail'>
+        <view class='title'>企业介绍</view>
+        <view class="content {{show?'limit':''}}">{{info.description}}</view>
+        <view class='clickMore' wx:if="{{show}}" data-type='up' bindtap='showText'>
+           <text>拉开</text>
+           <image src='image/down.png'></image>
+         </view>
+        <view class='clickMore' wx:if="{{!show}}" data-type='down' bindtap='showText'>
+           <text>收起</text>
+           <image src='image/up.png'></image>
+        </view>
+    </view>
+    <!-- S detail -->
+    
+    <!-- S list -->
+    <view class='list'>
+       <view class='title'>在招职位</view>
+       <view class='each' wx:for="{{list}}" data-id="{{item.pkid}}">
+          <navigator url="../detail/detail?id={{item.pkid}}" hover-class="navigator-hover">
+              <view class='top'>
+                  <view class='head'>{{item.title}}</view>
+                  <view class='adress'>{{item.region_name}}</view>
+              </view>
+
+              <view class='bottom'>
+                  <view class='tip'>{{item.salary_range}} | {{item.education}} | {{item.week_available}}</view>
+                  <view class='time'>{{item.create_time}}</view>
+              </view>
+          </navigator>
+       </view>
+    </view>
+    <!-- E list -->
+</view>

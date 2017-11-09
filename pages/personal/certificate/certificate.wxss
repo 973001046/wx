@@ -1,0 +1,8 @@
+/* pages/personal/certificate/certificate.wxss */
+@import "../../../style/information.wxss";
+.itemList .special .left{
+  color:#969696;
+}
+.itemList .special .text input{
+  color:#969696;
+}

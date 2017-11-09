@@ -1,0 +1,23 @@
+<!--pages/personal/diplomaList/diplomaList.wxml-->
+<view class='container'>
+    <view class='itemList'>
+        <view class='item' wx:for="{{list}}">
+            <view class='top'>
+                <text>{{item.certificate_name}}</text>
+                <navigator url="/pages/personal/diploma/diploma?id={{item.pkid}}&index={{index}}">
+                   <image src='../../resume/image/edit.png'></image>
+                </navigator>
+            </view>
+
+            <view class='center'>
+                <text>{{item.organization}}</text>
+            </view>
+
+            <view class='bottom' style='padding-top: 0'>{{item.description}}</view>
+        </view>
+    </view>
+
+    <navigator url="/pages/personal/diploma/diploma">
+       <button type="primary"> 添加课外活动 </button>
+    </navigator>
+</view>

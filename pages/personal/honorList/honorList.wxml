@@ -1,0 +1,20 @@
+<!--pages/personal/honorList/honorList.wxml-->
+<view class='container'>
+    <view class='itemList'>
+        <view class='item' wx:for="{{list}}">
+            <view class='top'>
+                <text>{{item.period}}</text>
+                <!-- <text>上海</text> -->
+                <navigator url="/pages/personal/honor/honor?id={{item.pkid}}&index={{index}}">
+                   <image src='../../resume/image/edit.png'></image>
+                </navigator>
+            </view>
+
+            <view class='bottom' style='padding-top: 0'>{{item.description}}</view>
+        </view>
+    </view>
+
+    <navigator url="/pages/personal/honor/honor">
+       <button type="primary"> 添加荣誉 </button>
+    </navigator>
+</view>

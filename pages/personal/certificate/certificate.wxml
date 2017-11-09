@@ -1,0 +1,38 @@
+<!--pages/personal/certificate/certificate.wxml-->
+<view class='container'>
+    <view class='itemList'>
+        <view class='item clearfix'>
+            <view class='left'>证书分类</view>
+            <view class='text'>财经</view>
+            <image src='/images/Combined Shape.png'></image>
+        </view>
+
+        <view class='item clearfix'>
+            <view class='left'>证书名称</view>
+            <view class='text'>财经</view>
+            <image src='/images/Combined Shape.png'></image>
+        </view>
+
+        <view class='item clearfix'>
+            <view class='left'>证书状态</view>
+            <view class='text'>通过</view>
+            <image src='/images/Combined Shape.png'></image>
+        </view>
+
+        <view class='item special clearfix'>
+            <view class='left'>会计师中级职称</view>
+            <view class='text'>
+                <input  bindinput="bindKeyInput" placeholder="选填分数或等级"/>
+            </view>
+        </view>
+    </view>
+
+    <view class='btn'>
+        <button type="primary" disabled="{{disabled}}" bindtap="primary">保存</button>
+    </view>
+    
+
+    <view class='btn'>
+        <view>删除</view>
+    </view>
+</view>

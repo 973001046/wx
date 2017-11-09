@@ -1,0 +1,243 @@
+<!--pages/resume/resume.wxml-->
+<wxs src="../personal/basic/basic.wxs" module="basicFuc" />
+<view class='container'>
+    <view class='userTop'>
+        <image src='image/background.png'></image>
+        <image class='img' src='{{imgFile}}' wx:if="{{imgFile != ''}}" bindtap='changeImg'></image>
+        <image class='img' src='image/boy.png' wx:if="{{imgFile == ''}}" bindtap='changeImg'></image>
+        <view>点击修改图像</view>
+    </view>
+
+    <view class='lists'>
+        <view class='title'>
+            <text>基本信息</text>
+            <navigator url="../personal/basic/basic" hover-class="navigator-hover">
+              <image src='image/edit.png'></image>
+            </navigator>
+        </view>
+
+        <view class='content'>
+            <view class='text' wx:if="{{init.basic.name != ''}}">
+                <text>姓　　名：</text>
+                <text>{{init.basic.name}}</text>
+            </view>
+
+            <view class='text' wx:if="{{init.basic.gender != ''}}">
+                <text>性　　别：</text>
+                <text>{{init.basic.gender}}</text>
+            </view>
+
+            <view class='text' wx:if="{{init.basic.birth_date != ''}}">
+                <text>出生日期：</text>
+                <text>{{init.basic.birth_date}}</text>
+            </view>
+
+            <view class='text' wx:if="{{init.basic.region_name != ''}}">
+                <text>所在城市：</text>
+                <text>{{init.basic.living_city.region_name}}</text>
+            </view>
+
+            <view class='text' wx:if="{{init.basic.politics_status != ''}}">
+                <text>政治面貌：</text>
+                <text>{{basicFuc.politics(init.basic.politics_status)}}</text>
+            </view>
+
+            <view class='border'>
+                <view class='text' wx:if="{{init.basic.contact_mobile != ''}}">
+                    <text>联系电话：</text>
+                    <text>{{init.basic.contact_mobile}}</text>
+                </view>
+
+                <view class='text' wx:if="{{init.basic.contact_email != ''}}">
+                    <text>联系邮箱：</text>
+                    <text>{{init.basic.contact_email}}</text>
+                </view>
+            </view>
+
+            <view class='text' wx:if="{{init.basic.education != ''}}">
+                <text>最高学历：</text>
+                <text>{{basicFuc.edu(init.basic.education)}}</text>
+            </view>
+
+            <view class='text' wx:if="{{init.basic.graduate_school != ''}}">
+                <text>就读学校：</text>
+                <text>{{init.basic.graduate_school}}</text>
+            </view>
+
+            <view class='text' wx:if="{{init.basic.detail_major != ''}}">
+                <text>专业名称：</text>
+                <text>{{init.basic.detail_major}}</text>
+            </view>
+
+            <view class='text' wx:if="{{init.basic.graduate_year != ''}}">
+                <text>毕业年份：</text>
+                <text>{{init.basic.graduate_year}}</text>
+            </view>
+
+        </view>
+    </view>
+    
+    <!-- S 实习意向 -->
+    <view class='lists'>
+        <view class='title'>
+            <text>实习意向</text>
+            <navigator url="../personal/internship/internship" hover-class="navigator-hover">
+               <image src='image/edit.png'></image>
+            </navigator>
+        </view>
+
+        <view class='content'>
+            <view class='text' wx:if="{{init.expect.expect_category.value != ''}}">
+                <text>职位类别：</text>
+                <text>{{init.expect.expect_category.value}}</text>
+            </view>
+
+            <view class='text' wx:if="{{init.expect.expect_category.value != ''}}">
+                <text>期望城市：</text>
+                <text wx:for="{{init.expect.expect_city}}">
+                    <text wx:if="{{init.expect.expect_city.length == index+1}}">{{item.region_name}}</text>
+                    <text wx:if="{{init.expect.expect_city.length != index+1}}">{{item.region_name}}、</text>
+                </text>
+            </view>
+
+            <view class='text' wx:if="{{init.expect.week_available != ''}}">
+                <text>天数 / 周：</text>
+                <text>{{init.expect.week_available}}</text>
+            </view>
+
+            <view class='text' wx:if="{{init.expect.salary_range.value != ''}}">
+                <text>期望日薪：</text>
+                <text>{{init.expect.salary_range.value}}</text>
+            </view>
+
+            <view class='text' wx:if="{{init.expect.period_finish != '' && init.expect.period_start !=''}}">
+                <text>实习阶段：</text>
+                <text>{{init.expect.period_start}}至{{init.expect.period_finish}}</text>
+            </view>
+        </view>
+    </view>
+
+    <!-- s 教育背景 -->
+    <view class='lists'>
+        <view class='title'>
+            <text>教育背景</text>
+            <navigator url="../personal/educateList/educateList" hover-class="navigator-hover">
+               <image src='image/edit.png'></image>
+            </navigator>
+        </view>
+
+        <view class='content'>
+            <view class='each' wx:if="{{init.education.length >= 1}}" wx:for="{{init.education}}">
+                <view class='time'>
+                    <text>{{item.start_time}}至{{item.finish_time}}</text>
+                    <text>{{item.degree.value}}</text>
+                </view>
+                <view class='text'>{{item.school_name}}</view>
+                <view class='text'>{{item.major_title}}</view>
+            </view>
+        </view>
+    </view>
+
+    <!-- s 实习经历 -->
+    <view class='lists'>
+        <view class='title'>
+            <text>实习经历</text>
+            <navigator url="../personal/practiceList/practiceList" hover-class="navigator-hover">
+               <image src='image/edit.png'></image>
+            </navigator>
+        </view>
+
+        <view class='content'>
+            <view class='each' wx:if="{{init.practice.length >= 1}}" wx:for="{{init.practice}}">
+                <view class='time'>
+                    <text>{{item.start_time}}至{{item.finish_time}}</text>
+                    <!-- <text>{{item.finish_time}}</text> -->
+                </view>
+                <view class='text'>{{item.organization}} | {{item.quarters}}</view>
+                <view class='description'>{{item.content}}</view>
+            </view>
+        </view>
+    </view>
+
+    <!-- s 校园经历 -->
+    <view class='lists'>
+        <view class='title'>
+            <text>校园经历</text>
+            <image src='image/edit.png' bindtap='schoolFunc'></image>
+        </view>
+
+        <view class='content'>
+            <view class='text' wx:if="{{init.school.length >= 1}}">校内职务</view>
+            <view class='each' wx:if="{{init.school.length >= 1}}" wx:for="{{init.school}}">
+                <view class='time'>
+                    <text>{{item.start_time}}至{{item.finish_time}}</text>
+                </view>
+                <view class='text'>{{item.job_title}}</view>
+                <view class='description'>{{item.description}}</view>
+            </view>
+
+            <view class='text' wx:if="{{init.activity.length >= 1}}">课外活动</view>
+            <view class='each' wx:if="{{init.activity.length >= 1}}" wx:for="{{init.activity}}">
+                <view class='time'>
+                    <text>{{item.period}}</text>
+                </view>
+                <!-- <view class='text'>{{item.finish_time}}</view> -->
+                <view class='description'>{{item.description}}</view>
+            </view>
+        </view>
+
+    </view>
+
+    <!-- s 证书荣誉 -->
+    <view class='lists'>
+        <view class='title'>
+            <text>证书荣誉</text>
+            <navigator url="/pages/personal/honorList/honorList" hover-class="navigator-hover">
+               <!-- <image src='image/edit.png' bindtap='honorFunc'></image> -->
+               <image src='image/edit.png'></image>
+            </navigator>
+        </view>
+
+        <view class='content'>
+            <!-- <view class='text' wx:if="{{init.cert.length >= 1}}">证书</view>
+            <view class='each' wx:if="{{init.cert.length >= 1}}" wx:for="{{init.cert}}">
+                <view class='text'>{{item.certificate_name}}</view>
+                <view class='description' wx:if='{{item.status == 1}}'>通过{{item.level_course}} | 在读{{item.level_course_on}}</view>
+                <view class='description' wx:if='{{item.status == 2}}'>通过{{item.level_course}}</view>
+            </view> -->
+
+            <view class='text' wx:if="{{init.prize.length >= 1}}">荣誉</view>
+            <view class='each' wx:if="{{init.prize.length >= 1}}" wx:for="{{init.prize}}">
+                <view class='text'>{{item.certificate_name}}</view>
+               <view class='time'>
+                    <text>{{item.period}}</text>
+                </view>
+                <view class='description'>{{item.description}}</view>
+            </view>
+        </view>
+    </view>
+
+    <!-- s 自我评价 -->
+    <view class='lists'>
+        <view class='title'>
+            <text>自我评价</text>
+            <navigator url="../personal/self/self" hover-class="navigator-hover">
+               <image src='image/edit.png'></image>
+            </navigator>
+        </view>
+
+        <view class='content'>
+          <view class='each' wx:if="{{init.basic.dear_hr != ''}}">
+            <view class='description'>{{init.basic.dear_hr}}</view>
+          </view>
+        </view>
+    </view>
+
+    <view class='progress'>
+        <view class='left'>简历完整度</view>
+        <view class='center'>
+            <view style="width:{{init.basic.complete_rate*440/100 }}rpx">progress</view>
+        </view>
+        <view class='right'>{{init.basic.complete_rate}}%</view>
+    </view>
+</view>

@@ -1,0 +1,95 @@
+/* pages/personal/adress/adress.wxss */
+.hot-city{
+  font-size: 28rpx;
+  color: #969696;
+  padding: 10rpx 78rpx 10rpx 30rpx;
+  background-color: #f6f7f8;
+}
+.hot-city-list{
+  text-align: center;
+  padding-top: 40rpx;
+  width: 720rpx;
+}
+.hot-city-list text{
+  display: inline-block;
+  width: 194rpx;
+  height: 60rpx;
+  border-radius: 8rpx;
+  border: 1rpx solid #d9d9d9;
+  text-align: center;
+  line-height: 60rpx;
+  color: #646464;
+  font-size: 28rpx;
+  margin: 0 15rpx;
+  margin-bottom: 30rpx;
+}
+.all-list .all-city{
+  font-size: 28rpx;
+  color: #969696;
+  padding: 10rpx 78rpx 10rpx 30rpx;
+  background-color: #f6f7f8;
+}
+.chooseList{
+  height: 88rpx;
+  position: relative;
+}
+.chooseList image{
+  position: absolute;
+  right: 90rpx;
+  width: 30rpx;
+  height: 30rpx;
+  top: 27rpx;
+}
+.all-list .all-city-list text{
+  display: block;
+  width: 690rpx;
+  margin: 0 auto;
+  line-height: 88rpx;
+  height: 88rpx;
+  border-bottom: 1px solid #eee;
+  color: #646464;
+  font-size: 28rpx; 
+}
+.right-bar{
+  position: fixed;
+  background-color: #fff;
+  width: 48rpx;
+  right: 0;
+  top: 120rpx;
+}
+.right-bar view{
+   color: #29a1ff;
+   text-align: center;
+   line-height: 40rpx;
+   font-size: 28rpx;
+}
+.show-letter{
+  position: fixed;
+  width: 200rpx;
+  height: 200rpx;
+  background-color: rgba(0,0,0,0.5);
+  line-height: 200rpx;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  margin-left: -100rpx;
+  margin-top: -100rpx;
+  border-radius: 10rpx;
+  color: #fff;
+  font-size: 100rpx;
+}
+.btn{
+  width: 100%;
+  padding: 30rpx 0;
+  height: 100rpx;
+  background-color: #e6edf5;
+}
+.btn button{
+  margin: 0 80rpx;
+  background-color: #29a2ff;
+  color: #fff; 
+}
+.position{
+  position: fixed;
+  bottom: 0;
+}

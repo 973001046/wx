@@ -1,0 +1,162 @@
+/**index.wxss**/
+.search{
+  width: 100%;
+  height: 100rpx;
+  background-color: #29a1ff;
+  position: relative;
+  overflow: hidden;
+}
+.search input{
+  width: 484rpx;
+  height: 60rpx;
+  background-color: #94d0ff;
+  border-radius: 10rpx;
+  margin: 20rpx 0 0 155rpx;
+  opacity: 0.5;
+}
+.search .select-city{
+  position: absolute;
+  left: 30rpx;
+  top: 20rpx;
+  line-height: 60rpx;
+  width: 104rpx;
+  text-align: center;
+  height: 60rpx;
+  font-size: 32rpx;
+  /* background: url('image/down.png') no-repeat right center; */
+  background-size: 20rpx 10rpx;
+  color: #fff;
+  padding-right: 20rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.search .select-city image{ 
+  position: absolute;
+  width: 20rpx;
+  height: 10rpx;
+  right: 0;
+  top: 27rpx;
+}
+.search .turn-user{
+  position: absolute;
+  right: 30rpx;
+  top: 20rpx;
+  width: 50rpx;
+  height: 60rpx;
+  /* overflow: hidden; */
+  /* text-indent: -99rpx;  */
+   /* background: url('../../images/user.png') no-repeat center;  */
+  background-size: 45rpx 50rpx; 
+}
+.search .turn-user{
+   margin-top: 5rpx; 
+}
+.search .information{
+  width: 450rpx;
+  height: 60rpx;
+  background-color: #94d0ff;
+  border-radius: 10rpx;
+  margin: 20rpx 0 0 180rpx;
+  line-height: 60rpx;
+}
+.search .information view{
+  display: block;
+  width: 230rpx;
+  height: 60rpx;
+  font-size: 28rpx;
+  color: #fff;
+  margin-left: 110rpx;
+  padding-left: 45rpx;
+  /* background: url('image/Oval.png') no-repeat left center; */
+  background-size: 32rpx;
+  position: relative;
+}
+.search .information view image{
+  position: absolute;
+  left: 0;
+  top: 14rpx;
+  width: 32rpx;
+  height: 32rpx;
+ }
+.index-list .each{
+  margin: 0 28rpx;
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #eee;
+  position: relative;
+}
+.index-list .each .left{
+  width: 136rpx;
+  height: 136rpx;
+  border: 1rpx solid #f6f6f6; 
+  border-radius: 10rpx;
+  overflow: hidden;
+  float: left;
+}
+.index-list .each .right{
+  float: left;
+  margin-left: 20rpx;
+}
+.index-list .each .right text{
+  display: block;
+}
+.index-list .each .right .title{
+  color: #323232;
+  font-size: 30rpx;
+  font-weight: bold;
+  line-height: 48rpx;
+  margin-top: 6rpx;
+  width: 410rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+.index-list .each .right .name{
+  color: #646464;
+  font-size: 28rpx;
+  line-height: 42rpx;
+  width: 430rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+.index-list .each .right .tip{
+  color: #969696;
+  font-size: 26rpx;
+  line-height: 42rpx;
+}
+.index-list .each .city{
+  position: absolute;
+  right: 0;
+  color: #969696;
+  font-size: 26rpx;
+  line-height: 48rpx;
+  margin-top: 6rpx;
+}
+.loading{
+  width: 250rpx;
+  line-height: 60rpx;
+  /* background: url('../../images/loading.gif') no-repeat left center; */
+  background-size: 35rpx;
+  font-size: 30rpx;
+  padding-left: 55rpx;
+  color: #666;
+  margin: 20rpx auto;
+  position: relative;
+}
+.loading image{
+  position: absolute;
+  width: 35rpx;
+  height: 35rpx;
+  left: 0;
+  top: 13rpx;
+}
+.noMore{
+    width: 250rpx;
+    line-height: 60rpx;
+    text-align: center;
+    background-size: 35rpx;
+    font-size: 30rpx;
+    color: #666;
+    margin: 20rpx auto;
+}
